@@ -1,7 +1,5 @@
 package exercise;
 
-import static org.junit.jupiter.api.DynamicTest.stream;
-
 import java.util.List;
 
 
@@ -32,9 +30,11 @@ public class Filtering {
      * @return a new list of posts that only contains posts written by the user
      */
     public static List<Post> filterPostsByUser(User user, List<Post> posts) {
-        return posts.subList(0, 10).stream()
+        return posts.stream()
                 .filter(post -> post.userId() == user.id())
                 .toList();
+        
+        
 
     }
 }
